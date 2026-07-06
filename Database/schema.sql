@@ -1,18 +1,3 @@
--- ==========================
--- Author: Suryansh Malik
--- Database: PostgreSQL
---
--- Contains:
--- - Users
--- - Seats
--- - Holds
--- - Payments
--- - Bookings
--- - Jobs
--- - Job Locks
--- ==========================
-
-
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
