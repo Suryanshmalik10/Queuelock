@@ -1,13 +1,3 @@
-"""initial schema: users, seats, holds, payments, bookings, jobs, job_locks
-
-Revision ID: 0001
-Revises:
-Create Date: 2026-07-09
-
-This migration does NOT use autogenerate. It executes the hand-written
-raw SQL in Database/schema.sql, which is the real source of truth for
-the schema.
-"""
 from pathlib import Path
 
 from alembic import op

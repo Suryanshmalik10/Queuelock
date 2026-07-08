@@ -13,8 +13,6 @@ config.set_main_option("sqlalchemy.url", settings.database_url)
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-# We deliberately do NOT use autogenerate for this project.
-# All migrations are hand-written raw SQL, executed via op.execute().
 target_metadata = Base.metadata
 
 
