@@ -4,8 +4,6 @@ from alembic import context
 from sqlalchemy import engine_from_config, pool
 
 from app.core.config import settings
-from app.core.db import Base
-import app.models  # noqa: F401 - ensures all models are registered on Base.metadata
 
 config = context.config
 config.set_main_option("sqlalchemy.url", settings.database_url)
@@ -13,7 +11,9 @@ config.set_main_option("sqlalchemy.url", settings.database_url)
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-target_metadata = Base.metadata
+# No ORM models, no autogenerate. All migrations are hand-written raw SQL,
+# executed via op.execute(). target_metadata stays None on purpose.
+target_metadata = None
 
 
 def run_migrations_offline() -> None:

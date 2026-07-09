@@ -61,7 +61,7 @@ CREATE UNIQUE INDEX uq_bookings_confirmed_seat
 
 CREATE TABLE jobs(
     id SERIAL PRIMARY KEY,
-    type TEXT NOT NULL CHECK (type IN ('hold_expiry', 'payment_confirm')),
+    type TEXT NOT NULL CHECK (type IN ('hold_expiry', 'payment_confirm', 'test_echo')),
     payload JSONB NOT NULL,
     status TEXT NOT NULL DEFAULT 'pending'
            CHECK (status IN ('pending', 'processing', 'done', 'failed')),
